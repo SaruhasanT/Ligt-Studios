@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f5f5fa;
+  overflow-x: hidden;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+header > .logo {
+  width: 100px;
+  height: 10px;
+}
+nav > ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+nav > ul > li {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 4px;
+  border: 1px solid;
+  cursor: pointer;
+  background-color: #000;
+  font-weight: medium;
+  font-size: 0.9rem;
+}
+nav > ul a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  position: absolute;
+}
+nav ul > li {
+  width: 100px;
+  align-items: center;
+  background: #f5f5fa;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: -10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  font-size: 1rem;
+  justify-content: center;
+  line-height: 1.5rem;
+  text-align: left;
+  transition: 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  overflow: hidden;
+  height: 30px;
+  perspective: 50px;
+}
+.a,
+.b {
+  width: 100px;
+  padding: 5px 0;
+  position: absolute;
+  text-align: center;
+  transition: 200ms all ease-in-out;
+  /* transform-origin: bottom; */
+}
+.a {
+  transform: translateY(100%) scaleX(0.5);
+  color: rgb(15, 73, 235);
+}
+nav ul > li:hover .a {
+  transform: translateY(0);
+}
+nav ul > li:hover .b {
+  transform: translateY(-100%) scaleX(0.5);
+}
+nav ul > li:hover {
+  background: #f8f8ff;
+  box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 0px 0;
+  /* margin-bottom: 70px; */
+  animation-name: appear;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  perspective: 300px;
+}
+
+.title {
+  font-size: 5rem;
+}
+.slogan {
+  margin-left: 180px;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 100px;
+  background-color: white;
+  gap: 100px;
+}
+.service .img {
+  flex: 1;
+}
+.service .description {
+  flex: 1;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  transition: 1000ms all linear;
+}
+.service p {
+  font-weight: light;
+}
+.service img {
+  width: 80%;
+  box-shadow: 0 0 8px 8px #f5f5fa inset;
+  transition: 500ms all ease-in;
+  transform: translateY(50%);
+}
+
+.mobile img {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.web img {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.service img.active {
+  transform: translate(0);
+  opacity: 1;
+}
+.service .description.active {
+  opacity: 1;
+}
+.service h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.wave {
+  background-image: url("./assets/images/wave.svg");
+  height: 300px;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  nav ul > li {
+    padding: 24px;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .service img,
+  .service .description {
+    transition: none;
+  }
+}
