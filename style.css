@@ -141,21 +141,21 @@ nav ul > li:hover {
   width: 80%;
   box-shadow: 0 0 8px 8px #f5f5fa inset;
   transition: 500ms all ease-in;
-  transform: translateY(50%);
+  /* transform: translateY(50%); */
 }
 
 .mobile img {
-  transform: translateX(100%);
-  opacity: 0;
+  transform: translateX(30%);
+  filter: blur(10px);
 }
 .web img {
-  transform: translateX(-100%);
-  opacity: 0;
+  transform: translateX(30%);
+  filter: blue(10px);
 }
 
 .service img.active {
   transform: translate(0);
-  opacity: 1;
+  filter: blur(0);
 }
 .service .description.active {
   opacity: 1;
