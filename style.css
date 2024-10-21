@@ -132,7 +132,7 @@ nav ul > li:hover {
   font-family: "Roboto Flex", sans-serif;
   font-weight: 500;
   opacity: 0;
-  transition: 200ms all linear;
+  transition: 500ms all linear;
 }
 .service p {
   font-weight: light;
@@ -140,7 +140,7 @@ nav ul > li:hover {
 .service img {
   width: 80%;
   box-shadow: 0 0 8px 8px #f5f5fa inset;
-  transition: 200ms all ease-in;
+  transition: 500ms all ease-in;
   /* transform: translateY(50%); */
 }
 
