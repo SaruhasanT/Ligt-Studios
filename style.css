@@ -171,6 +171,30 @@ nav ul > li:hover {
   background-repeat: no-repeat;
   width: 100%;
 }
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 40px 0;
+  justify-content: center;
+}
+
+.banner > img {
+  min-width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 200ms ease-in;
+  animation: move 40s;
+  animation-iteration-count: infinite;
+}
+
+.banner > img:hover {
+  border: 2px solid lightgreen;
+}
+
 @media (min-width: 768px) {
   nav ul > li {
     padding: 24px;
@@ -193,5 +217,10 @@ nav ul > li:hover {
   .service img,
   .service .description {
     transition: none;
+  }
+}
+@keyframes move {
+  to {
+    transform: translateX(5000%);
   }
 }
