@@ -9,12 +9,14 @@
 body {
   background-color: #f5f5fa;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 40px;
+  transition: 200ms all ease-in-out;
 }
 header > .logo {
   width: 100px;
@@ -95,6 +97,31 @@ nav ul > li:hover {
   background: #f8f8ff;
   box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
 }
+header.below {
+  background-color: #ccc;
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+header.below .logo {
+  display: none;
+}
+header.below nav {
+  width: 100%;
+}
+header.below nav > ul {
+  justify-content: space-between;
+  width: 100%;
+}
+header.below nav ul li {
+  box-shadow: none;
+  background: none;
+}
+header.below nav ul li:hover {
+  transform: translate(0);
+}
 .hero {
   width: 100%;
   display: flex;
@@ -102,7 +129,7 @@ nav ul > li:hover {
   align-items: center;
   justify-content: center;
   padding: 100px 0 0px 0;
-  /* margin-bottom: 70px; */
+  position: relative;
   animation-name: appear;
   animation-duration: 3s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -126,6 +153,8 @@ nav ul > li:hover {
 }
 .service .img {
   flex: 1;
+
+  overflow: hidden;
 }
 .service .description {
   flex: 1;
@@ -139,16 +168,19 @@ nav ul > li:hover {
 }
 .service img {
   width: 80%;
-  box-shadow: 0 0 8px 8px #f5f5fa inset;
+  height: 400px;
+  box-shadow: 6px 6px 8px 8px #f5f5fa;
+  filter: blur(10px);
   transition: 500ms all ease-in;
+  object-fit: cover;
+  object-position: top left;
   /* transform: translateY(50%); */
 }
 
-.mobile img {
+.wedding img {
   transform: translateX(30%);
-  filter: blur(10px);
 }
-.web img {
+.portrait img {
   transform: translateX(-30%);
   filter: blue(10px);
 }
@@ -163,8 +195,12 @@ nav ul > li:hover {
 .service h2 {
   font-size: 3em;
   margin-bottom: 10px;
+  transition: 200ms all ease;
+  cursor: context-menu;
 }
-
+.service h2:hover {
+  transform: translateY(-20px);
+}
 .wave {
   background-image: url("./assets/images/wave.svg");
   height: 300px;
